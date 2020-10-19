@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BoundingBox : MonoBehaviour
 {
-    // Start is called before the first frame update
+    protected Collider2D coll;
     void Start()
     {
-        Collider2D coll = GetComponent<Collider2D>();
-        Debug.Log(coll);
-        Debug.Log(coll.bounds.extents);
+        coll = GetComponent<Collider2D>();
+        coll.isTrigger = true;
     }
 }

@@ -14,7 +14,8 @@ public class ThingController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {    
+        // Position of mouse relative to camera    
         Vector3 mousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 
                 Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
@@ -22,7 +23,7 @@ public class ThingController : MonoBehaviour
         {
             if(!target.gameObject.CompareTag("Thing")) target = null; // Set target to null if it is not a random thing
         }
-
+        #region Grab thing
         if(Input.GetButton("Fire1"))    // Left Mouse Button Click
         {
             hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector3.forward, Mathf.Infinity, layerMask);
@@ -50,6 +51,8 @@ public class ThingController : MonoBehaviour
         {
             target = null;
         }
+        #endregion
+        #region Delete/Reset Thing
         else if(Input.GetButton("Fire2")) // Right Mouse Button Click
         {
             hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector3.forward, Mathf.Infinity, layerMask);
@@ -61,10 +64,19 @@ public class ThingController : MonoBehaviour
                 }
             }
         }
+        #endregion
     }
 
+    // Checks if the position is within the bounds
     private bool IsPointInBounds(Vector3 point)
     {
-        return bounds.bounds.Contains(point);
+        if(bounds)
+        {
+            return bounds.bounds.Contains(point);
+        } else 
+        {
+            Debug.LogWarning("No Bounds set for " + gameObject.name);
+            return true;
+        }
     }
 }
