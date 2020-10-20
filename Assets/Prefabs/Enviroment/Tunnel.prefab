@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6521353310984760469}
-  m_Layer: 0
-  m_Name: Tunnel 1
+  - component: {fileID: -4079737656151271420}
+  m_Layer: 5
+  m_Name: Tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4079737656151271420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4520927185565156419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244600e32370444aa75f1535428d35b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gbb: {fileID: 4719397291580690556}
+  gt: {fileID: 5280023997336722617}
 --- !u!1 &7659728030356675238
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +59,7 @@ GameObject:
   - component: {fileID: 2772841730737975947}
   - component: {fileID: 4208554548258033165}
   - component: {fileID: 8148900872884501813}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +168,7 @@ GameObject:
   - component: {fileID: 4482951957237984583}
   - component: {fileID: 3118917079652521256}
   - component: {fileID: 9092785947856863277}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,13 +273,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6521353310984760469}
     m_Modifications:
+    - target: {fileID: 240632307928493451, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 823638404638957904, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
       propertyPath: m_Name
       value: GravityBoundingBox
       objectReference: {fileID: 0}
+    - target: {fileID: 823638404638957904, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 823638404638957908, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 823638404638957908, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -306,6 +329,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 823638404638957908, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 823638404638957908, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
 --- !u!4 &4719397291580690553 stripped
@@ -313,3 +344,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 823638404638957908, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
   m_PrefabInstance: {fileID: 5336919588531892525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4719397291580690556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 823638404638957905, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+  m_PrefabInstance: {fileID: 5336919588531892525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025628639aacec6418b847a884c039e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5280023997336722617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 240632307928493460, guid: 2144b0af1d39831479df1b254add6e1c, type: 3}
+  m_PrefabInstance: {fileID: 5336919588531892525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396281d688410a14daaba4bcddf96f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

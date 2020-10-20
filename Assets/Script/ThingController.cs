@@ -8,6 +8,9 @@ public class ThingController : MonoBehaviour
     public LayerMask layerMask;
     [Range(0.1f, 100f)]
     public float speed = 2f;
+    public bool debug = false;
+
+    [Space]
 
     private RaycastHit2D hit;
     public Transform target;
@@ -26,11 +29,14 @@ public class ThingController : MonoBehaviour
         #region Grab thing
         if(Input.GetButton("Fire1"))    // Left Mouse Button Click
         {
+            if(debug) Debug.Log("Fire");
             hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector3.forward, Mathf.Infinity, layerMask);
             if(hit)
             {
+                if(debug) Debug.Log("Target: " + hit.collider.gameObject.name);
                 if(hit.transform.gameObject.GetComponent<Thing>() != null)
                 {
+                    if(debug) Debug.Log("Sucssefull hit");
                     if(!hit.transform.gameObject.CompareTag("Thing") && IsPointInBounds(mousePos))
                     {                        
                         target = hit.transform; // Only set target if it is the playball and within the bounds
