@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8681120277297720751}
   - component: {fileID: 8681120277297720750}
+  - component: {fileID: 5074242136979837377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -48,4 +49,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23
   speed: 10
+  debug: 0
   target: {fileID: 0}
+--- !u!114 &5074242136979837377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681120277297720737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3b61ed138a12e4d892f6b7225cb07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8681120277297720737}
+  scoreMesh: {fileID: 0}
+  playball: {fileID: 0}
+  targetRange: {x: -2.25, y: 2.25}
+  targetIncrease: 2
+  wallPrefab: {fileID: 4520927185565156419, guid: 0a40dd99194968e45a9cd1aa7fb78c81, type: 3}

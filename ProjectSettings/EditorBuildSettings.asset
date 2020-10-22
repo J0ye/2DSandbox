@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/TestClimb.unity
+  - enabled: 0
+    path: Assets/Scenes/SpaceClimb.unity
     guid: 1c4522a587b5f6b4e87c71ee6c948e65
+  - enabled: 1
+    path: Assets/Scenes/StyleClimb.unity
+    guid: 9f1d90cf3df080b48866305636e1d969
   m_configObjects: {}

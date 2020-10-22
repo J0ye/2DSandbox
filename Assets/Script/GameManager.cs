@@ -13,9 +13,10 @@ public class GameManager : MonoBehaviour
     [Tooltip("Determines how far left or right a gametarget can spawn on the X axis.")]
     public Vector2 targetRange = Vector2.zero;
     [Tooltip("This is added to the targets y size.")]
-    public float targetIncrease = 1;
+    public Vector2 targetIncrease = Vector2.one;
     public GameObject wallPrefab;
 
+    private Scene activeScene;
     private bool startedClimb = false;
     private int score = 0;
 
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
             if(GameObject.Find("Player")) player = GameObject.Find("Player");
             if(GameObject.FindWithTag("Player")) player = GameObject.FindWithTag("Player");
         }
+
+        activeScene = SceneManager.GetActiveScene();
     }
 
     void LateUpdate()
@@ -55,14 +58,14 @@ public class GameManager : MonoBehaviour
         float newX = 0;
         if(targetRange.x < targetRange.y) newX = UnityEngine.Random.Range(targetRange.x, targetRange.y);
         if(targetRange.y < targetRange.x) newX = UnityEngine.Random.Range(targetRange.y, targetRange.x);
-        float newYSize = player.GetComponent<ThingController>().bounds.transform.lossyScale.y + targetIncrease;
-        player.GetComponent<ThingController>().bounds.transform.DOScaleY(newYSize, 0.5f);
+        Vector2 newSize = new Vector2(player.GetComponent<ThingController>().bounds.transform.lossyScale.x +targetIncrease.x , player.GetComponent<ThingController>().bounds.transform.lossyScale.y + targetIncrease.y);
+        player.GetComponent<ThingController>().bounds.transform.DOScale(newSize, 0.5f);
         ge.gbb.transform.position = new Vector3(newX, ge.gbb.transform.position.y, 0);
     }
 
     private void GameOver()
     {
         Debug.Log("Game Over");
-        SceneManager.LoadScene("TestClimb");
+        SceneManager.LoadScene(activeScene.name);
     }
 }
