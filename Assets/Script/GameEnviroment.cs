@@ -9,7 +9,7 @@ public class GameEnviroment : MonoBehaviour
     void Start()
     {
         if(gbb == null) SetUpGbb();
-        if(gt == null && gbb !=null); 
+        if(gt == null && gbb !=null) SetUpGt(); 
     }
 
     private void SetUpGbb()
