@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public float flairDuration = 1f;
     public GameObject wallPrefab;
 
+    [Header("Extra Settings")]
+    public string scene;
+
     private Scene activeScene;
     private bool startedClimb = false;
     private int score = 0;
@@ -53,6 +56,11 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(scene);
     }
 
     public void CallGameOver()
@@ -115,6 +123,10 @@ public class GameManager : MonoBehaviour
         newSize = new Vector2((player.GetComponent<ThingController>().bounds.transform.lossyScale.x + boundsIncrease.x) * xDiff, (player.GetComponent<ThingController>().bounds.transform.lossyScale.y + boundsIncrease.y) * yDiff);
         //Increase size of players gbb 
         player.GetComponent<ThingController>().bounds.transform.DOScale(newSize, animationDuration);
+        if(player.GetComponent<ThingController>().bounds.GetComponent<Pan>())
+        {
+            Destroy(player.GetComponent<ThingController>().bounds.GetComponent<Pan>());
+        }
     }
 
     private void GameOver()

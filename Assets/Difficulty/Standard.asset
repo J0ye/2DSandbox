@@ -23,7 +23,7 @@ MonoBehaviour:
   - {x: 0.7, y: 0.7}
   panDuration:
   - 1
+  - 0.9
   - 0.7
-  - 0.3
   raiseDifficultyAt: 5
-  addPanAt: 7
+  addPanAt: 2

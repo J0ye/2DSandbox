@@ -16,7 +16,7 @@ public class GravityBoundingBox : BoundingBox
         {
             foreach(Transform child in transform)
             {
-                if(child.gameObject.GetComponent<Collider2D>() != null)   innerBox = child.gameObject.GetComponent<Collider2D>();
+                if(child.gameObject.GetComponent<Collider2D>() != null && innerBox == null)   innerBox = child.gameObject.GetComponent<Collider2D>();
             }
         } 
     }
@@ -32,7 +32,7 @@ public class GravityBoundingBox : BoundingBox
             {
                 Vector3 dir =  innerBox.transform.position - obj.transform.position; // Direction towards center of bounds
                 float distance = Vector2.Distance(innerBox.transform.position, obj.transform.position);
-                rb.AddForce((dir*distance)*strength, ForceMode2D.Impulse);
+                rb.AddForce((dir*distance)*strength, ForceMode2D.Force);
             }
         }
     }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StyleClimb.unity
     guid: 9f1d90cf3df080b48866305636e1d969
+  - enabled: 1
+    path: Assets/Scenes/StyleClimbZoomed.unity
+    guid: bdc597bc887346649a1aa0dd4a847bfe
   m_configObjects: {}
